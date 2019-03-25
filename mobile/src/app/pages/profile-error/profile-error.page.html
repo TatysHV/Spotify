@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title color="success">
+        Error Getting Profile info
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding color="light">
+  <ion-row>
+    <ion-col size="12" text-center>
+      <img src="http://cdn.eldeforma.com/wp-content/themes/eldeforma-v2/dist/images/404.gif" alt="">
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="12" text-center>
+      <ion-button (click)="retry()" color="success">
+        <span>Retry</span><ion-icon name="refresh"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

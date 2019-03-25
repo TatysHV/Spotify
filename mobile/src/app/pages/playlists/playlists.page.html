@@ -1,0 +1,40 @@
+<ion-header color="dark">
+  <ion-toolbar color="dark">
+    <ion-title>
+      <small>Playlists</small>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="success" (click)="presentAlertPrompt()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <div>
+    <div text-center *ngIf="loading">
+      <ion-row align-items-center>
+        <ion-col align-self-center>
+          <ion-spinner name="circles" color="success"></ion-spinner>
+        </ion-col>
+      </ion-row>
+    </div>
+    <ion-list *ngIf="playlists">
+
+      <ion-list-header>
+        <ion-searchbar placeholder="Filtro" color="dark" animated [(ngModel)]="searchTerm"
+          (ionChange)="filterPlaylists()" debounce="200"></ion-searchbar>
+      </ion-list-header>
+      <ion-item *ngFor="let playlist of playlists" color="dark" routerLink="/playlist/{{playlist.id}}/songs">
+        <ion-thumbnail slot="start">
+          <img [src]="playlist.images.length > 0? playlist.images[0].url: 'https://dummyimage.com/100x100/078f12/fff&text='+playlist.name.toUpperCase().split('')[0]">
+        </ion-thumbnail>
+        <ion-label>{{playlist.name}}</ion-label>
+      </ion-item>
+    </ion-list>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>Spotify Configuration Required</h1>
+  <div class="row">
+    <div class="col-md-12">
+      <p>Go to <a href="https://developer.spotify.com/dashboard/applications">Spotify Developer Dashboard</a> create a
+        new application</p>
+      <p>Add the url <strong>{{url}}callback</strong> of this site to de Redirect URIs</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group row">
+        <label for="inputClientId" class="col-sm-3 col-form-label">Client ID</label>
+        <div class="col-sm-10">
+          <input [(ngModel)]="clientId" type="text" class="form-control" id="inputClientId"
+            placeholder="Enter your client id">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputClientSecret" class="col-sm-3 col-form-label">Client Secret</label>
+        <div class="col-sm-10">
+          <input [(ngModel)]="clientSecret" type="text" class="form-control" id="inputClientSecret"
+            placeholder="Enter your client secret">
+        </div>
+      </div>
+      <button type="button" class="btn btn-success" (click)="requestAuthorization()">Request access</button>
+    </div>
+  </div>
+</div>

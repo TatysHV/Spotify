@@ -1,0 +1,21 @@
+.avatar{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.no-songs{
+  text-align: center;
+  .icon{
+    font-size: 100px;
+    text-align: center;
+  }
+}
+
+.current-song{
+  text-align: center;
+}
+
+.controls{
+  font-size: 3em;
+}
